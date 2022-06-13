@@ -11,29 +11,38 @@ function randomNum(min, max) {
 
 //funzione per stabilire numero è pari o dispari
 function evenOrOdd(num) {
-    if (num % 2 == 0) {
+    if (num % 2 === 0) {
         return true;
     } else {
         return false;
     }
 }
 
-// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-let userChoice = prompt('pari o dispari');
-console.log('Utente ha scelto ' + userChoice);
+// L’utente sceglie pari o dispari
+let userChoice = prompt('gioca pari o dispari');
+while (userChoice != 'pari' && userChoice != 'dispari' ) {
+    userChoice = prompt('pari o dispari');
+ }
+
+//  inserisce un numero da 1 a 5.
 let numberUser = parseInt(prompt('Inserisci un numero da 1 a 5'));
-console.log('Numero utente: ' + numberUser);
+while (numberUser < 1 || numberUser > 5 || isNaN(numberUser)) {
+     numberUser = parseInt(prompt('Inserisci un numero da 1 a 5'));
+ }
 
-// Generiamo un numero random(sempre da 1 a 5) per il computer(usando una funzione).
-let numberPc = randomNum(1, 5);
-console.log('Numero random del PC: ' + numberPc);
+console.log(`Utente ha scelto ${userChoice}`);
+console.log(`Numero utente: ${numberUser}`);
+
+// Generiamo un numero random( da 1 a 5) per il computer(usando la funzione randomNum).
+const numberPc = randomNum(1, 5);
+console.log(`Numero random del PC: ${numberPc}`);
 // Sommiamo i due numeri
-let sum = numberUser + numberPc;
-console.log('Somma: ' + sum);
+const sum = numberUser + numberPc;
+console.log(`Somma: ${sum}`);
 
-//controllo chi ha vinto
+//dichiaro chi ha vinto
 if (evenOrOdd(sum) == true && userChoice == "pari" || evenOrOdd(sum) == false && userChoice == "dispari") {
     console.log('Hai vinto');
 } else {
-    console.log('PC winner');
+    console.log('PC Winner');
 }
