@@ -5,7 +5,7 @@
 let userWord = prompt('Inserisci una parola'); //chiedo una parola all'utente
 
 // creo una funzione per vedere se palindroma
-function palindrome() {
+function palindrome(userWord) {
 
     // usando una flag var che crea la parola inversa che mi serve per il confronto inserendo le lettere della parola data
     let reverseWord = '';
@@ -21,7 +21,7 @@ function palindrome() {
 }
 
 //confronto la parola dell'utente con la versione invertita data dalla funzione
-if (userWord === palindrome()) {
+if (userWord === palindrome(userWord)) {
     console.log(`la parola ${userWord} è palindroma`); //stampo in console se palindroma
 } else {
     console.log(`la parola ${userWord} non è palindroma`); //stampo in console se non è palindroma
