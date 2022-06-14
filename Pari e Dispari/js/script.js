@@ -12,10 +12,12 @@ function randomNum(min, max) {
 //funzione per stabilire numero è pari o dispari
 function evenOrOdd(num) {
     if (num % 2 === 0) {
-        return true;
+        result = true;
     } else {
-        return false;
+        result = false;
     }
+
+    return result;
 }
 
 // L’utente sceglie pari o dispari
